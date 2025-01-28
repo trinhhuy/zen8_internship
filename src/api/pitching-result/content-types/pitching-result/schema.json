@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pitching_results",
+  "info": {
+    "singularName": "pitching-result",
+    "pluralName": "pitching-results",
+    "displayName": "PitchingResult",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "criteria": {
+      "type": "text"
+    },
+    "mentor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "score": {
+      "type": "decimal"
+    },
+    "pitching": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pitching.pitching"
+    }
+  }
+}

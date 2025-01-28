@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pitchings",
+  "info": {
+    "singularName": "pitching",
+    "pluralName": "pitchings",
+    "displayName": "Pitching",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "intern_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "score": {
+      "type": "decimal"
+    },
+    "general_report": {
+      "type": "text"
+    },
+    "pitching_results": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pitching-result.pitching-result"
+    }
+  }
+}
