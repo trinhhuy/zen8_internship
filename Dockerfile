@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /srv/app
 COPY . .
 
-RUN npm install
+RUN rm -rf node_modules && npm install
+
+RUN npm run build --clean
 
 EXPOSE 1337
-CMD ["npm", "start"]
+CMD ["npm", "run", "develop"]

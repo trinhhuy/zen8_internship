@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "singularName": "question",
+    "pluralName": "questions",
+    "displayName": "Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "blocks",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "exams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::exam.exam",
+      "mappedBy": "questions"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "single_choice",
+        "multiple_choice"
+      ]
+    },
+    "options": {
+      "type": "json",
+      "required": true
+    },
+    "correct_answers": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
