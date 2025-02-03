@@ -67,9 +67,9 @@
     },
     "projects": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::project.project",
-      "mappedBy": "interns"
+      "mappedBy": "intern"
     }
   }
 }

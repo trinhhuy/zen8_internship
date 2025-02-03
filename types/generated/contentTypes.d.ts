@@ -621,8 +621,8 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    interns: Schema.Attribute.Relation<
-      'manyToMany',
+    intern: Schema.Attribute.Relation<
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -631,9 +631,9 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.Text;
     pm: Schema.Attribute.Relation<'manyToOne', 'admin::user'>;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1119,7 +1119,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
+    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;

@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "text"
     },
     "pm": {
@@ -20,9 +20,9 @@
       "relation": "manyToOne",
       "target": "admin::user"
     },
-    "interns": {
+    "intern": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "projects"
     }
